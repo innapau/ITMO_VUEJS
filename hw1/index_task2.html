@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>VUE.js - Homework #1</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style_task2.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="userProfile">
+            <header class="header">
+                <div class="title">
+                    <h2>{{sitename}}</h2>
+                </div>
+            </header>
+            <main>
+                <div class="profile_container" v-for="(item,index) in users" v-if="index == count">
+                    <div class="image">
+                        <div v-if="users[index].profilePicture == 'none'">
+                            <img src="./img/profile_pictures/blank.png">
+                        </div>
+                        <div v-else>
+                            <img :src="users[index].profilePicture">
+                        </div>
+                    </div>
+                    <div class="right_section">
+                        <div class="user_info">
+                            <h4 class="name">{{users[index].firstName + ' ' + users[index].lastName}}</h4>
+                        </div>
+                        <div class="user_data">
+                            <p><strong>Login: </strong> {{users[index].login}}</p>
+                            <p><strong>E-mail:</strong> {{users[index].email}}</p>
+                            <p><strong>Возраст:</strong> {{users[index].age | renderAge}}</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="controls">
+                    <button @click="clickOne()">Предыдущий пользователь</button>
+                    <button @click="clickTwo()">Следующий пользователь</button>
+                </div>
+            </main>
+        </div>
+        <script src="js/script_task2.js"></script>
+    </body>
+</html>

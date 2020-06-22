@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>VUE.js - Homework #1</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style_task1.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="product">
+            <header class="header">
+                <div class="title">
+                    <h1>{{sitename}}</h1>
+                </div>
+            </header>
+            <main>
+                <div class="productContainer" v-for="(item,index) in products" v-if="index == count">
+                    <div class="image" >
+                        <img :src="products[index].img">
+                    </div>
+                    <div class="description">
+                        <h1 v-text="products[index].title"></h1>
+                        <p><strong>Автор:</strong> {{products[index].author}}</p>
+        				<p><strong>Издетельство:</strong> {{products[index].publishing}}</p>
+        				<p><strong>Стоимость:</strong> {{products[index].price | priceBeautifier}}</p>
+                        <h4>Аннотация:</h4>
+                        <p v-html="products[index].description"></p>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button v-on:click="clickOne()">Назад</button>
+                    <button v-on:click="clickTwo()">Вперед</button>
+                </div>
+            </main>
+        </div>
+        <script src="js/script_task1.js"></script>
+    </body>
+</html>

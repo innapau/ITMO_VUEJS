@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>VUE.js - Homework #1</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div class="tabs-container">
+                <ul class="tabs">
+                    <li v-bind:class="{ active: isCurrentTab(0)}"><a href="#" @click="setCurrentTab(0)">О музыканте</a></li>
+                    <li v-bind:class="{ active: isCurrentTab(1)}"><a href="#" @click="setCurrentTab(1)">Биография</a></li>
+                    <li v-bind:class="{ active: isCurrentTab(2)}"><a href="#" @click="setCurrentTab(2)">Лепта</a></li>
+                    <li v-bind:class="{ active: isCurrentTab(3)}"><a href="#" @click="setCurrentTab(3)">Дискография</a></li>
+                </ul>
+                <div class="tabs-content" v-html="tabs[currentTab].template">
+                </div>
+            </div>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>

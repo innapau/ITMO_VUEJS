@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>VUE.js - Homework #1</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div class="container">
+                <h1>{{ title }}</h1>
+                <p class="short_desc">Dark Horse announces a Cyberpunk 2077 spin-off comic book from hit writer Cullen Bunn, to be released in September later this year.</p>
+                <img :src="img"/>
+                <p>Fans of CD Projekt Red are currently struggling with the announcement of yet another delay for Cyberpunk 2077. The open-world RPG was delayed an additional two months, from September to November this past week....<span v-if="visible">The wait for Cyberpunk 2077 has already been intolerable and now it'll last that much longer, but CD Projekt Red is doing what it can to make the wait a little less painful, as this week there will be a special Night City Wire presentation. But the most recent revelation is the announcement of a brand new Cyberpunk 2077 comic book.</span></p>
+                <p v-if="visible">CD Projekt Red is partnering with comic publisher Dark Horse to release Cyberpunk 2077: Trauma Team. The Traum Team series will run for four issues, with the first issue releasing September 9 for $39.99. The book is written by Cullen Bunn, best known for his Deadpool and Captain America work at Marvel, as well as his independent books Harrow County and The Sixth Gun. The artist will be Miguel Valderrama, who previously did the book Giants for Dark Horse.</p>
+                <div class="button">
+                    <button @click="visible = !visible">
+    				    {{ visible ? 'Скрыть продолжение' : 'Показать продолжение' }}
+    			    </button>
+                </div>
+            </div>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>

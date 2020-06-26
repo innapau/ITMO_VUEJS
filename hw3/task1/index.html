@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>VUE.js - Homework #3</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1 style="text-align: center;">Поиск статей</h1>
+            <div class="search_input">
+                <input type="text" v-model.trim="searchedText"/>
+                <button type="submit" v-on:click="renderResults()">Поиск</button>
+            </div>
+            <div v-if="isEmptyArray">
+                <div v-for="article in searchedArticles" class="search_results">
+                    <a :href="article.url" target="_blank">
+                        <h2>{{article.title}}</h2>
+                    </a>
+                    <div>
+                        <a :href="article.url" target="_blank">
+                            <img :src="article.img" @click="article.url"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div v-else style="text-align: center;">
+                <p>
+                    Результатов по Вашему запросу не найдено
+                </p>
+            </div>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>

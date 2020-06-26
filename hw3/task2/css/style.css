@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.editing_container {
+    width: 800px;
+    margin-left: 30px;
+    font-size: 1.5em;
+}
+
+.text_container {
+    width: 100%;
+}
+
+.input_container {
+    padding: 12px 20px;
+    font-size: 1.2em;
+}

@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>VUE.js - Homework #1</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h2>Редактирование текстового тега</h2>
+            <p>Для завершения редактирования нажмите Enter</p>
+            <div class="editing_container">
+                <div class="text_container" v-show="showText" v-on:click="editText()">
+                    <p v-text="displayedText">{{displayedText}}</p>
+                </div>
+                <div v-show="!showText" v-on:keyup.enter="editFinished()">
+                    <input class="input_container" type="text" v-model="inputText" ref="afterClick"/>
+                </div>
+            </div>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>

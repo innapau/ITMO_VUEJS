@@ -1,0 +1,38 @@
+body {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.search_input {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.search_results {
+    max-width: 600px;
+    margin: 15px auto;
+    border: 1px solid #D6D6D6;
+    padding: 20px;
+}
+
+.search_results a {
+    text-decoration: none;
+}
+
+.search_results h2 {
+    cursor: pointer;
+    color: #666666;
+}
+
+.search_results h2:hover {
+    color: #9B9D8C;
+}
+
+
+
+.search_results img {
+    cursor: pointer;
+    width: 100%;
+    margin: 5px auto;
+}

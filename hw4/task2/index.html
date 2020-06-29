@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>VUE.js - Homework #3</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div>
+                <header>
+                    <div class="switch_section">
+                        <button type="submit" @click="listDisplay = !listDisplay">{{listDisplay ? 'Показать сеткой' : 'Показать списком'}}</button>
+                    </div>
+                    <div class="search_input">
+                        <input type="text" v-model.trim="searchedText"/>
+                        <button type="submit" v-on:click="renderResults()" class="search">Поиск</button>
+                    </div>
+                </header>
+                <main>
+                    <div v-if="isNotEmptyArray && !listDisplay" class="articles_container_grid">
+                        <div v-for="article in searchedArticles" class="search_results">
+                            <a :href="article.url" target="_blank">
+                                <h2>{{article.title}}</h2>
+                            </a>
+                            <div>
+                                <a :href="article.url" target="_blank">
+                                    <img :src="article.img" @click="article.url"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-else-if="isNotEmptyArray && listDisplay" class="articles_container_list">
+                        <ul>
+                            <li v-for="article in searchedArticles">
+                                <div class="list_image">
+                                    <a :href="article.url" target="_blank">
+                                        <img :src="article.img" @click="article.url"/>
+                                    </a>
+                                </div>
+                                <a :href="article.url" target="_blank">
+                                    <h2>{{article.title}}</h2>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="text-align: center;" v-else>
+                        <p v-show="searchedText != ''">
+                            Результатов по Вашему запросу не найдено
+                        </p>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>

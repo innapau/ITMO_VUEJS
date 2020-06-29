@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>VUE.js - Homework #3</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <table class="table">
+                <caption>Стоимость услуг по созданию сайта</caption>
+                <tr>
+                    <th>Выбрать</th>
+                    <th>Название услуги</th>
+                    <th>Стоимость</th>
+                </tr>
+                <tr v-for="service in services">
+                    <td><input type="checkbox" v-bind:value="service" v-model="selectedServices"/></td>
+                    <td>{{service.name}}</td>
+                    <td>{{service.price | priceBeautifier}}</td>
+                </tr>
+            </table>
+            <div style="font-size: 1.2em;">
+                <p class="summ">Итоговая стоимость: <span class="totalValue">{{countPrice | priceBeautifier}}</span></p>
+            </div>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+#app {
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.gallery_add {
+    width: 100%;
+}
+
+.unit_container {
+    text-align: center;
+    width: 32%;
+    height: auto;
+    position: relative;
+}
+
+.unit_container h5 {
+    margin-bottom: 1em;
+}
+
+.unit_container img {
+    width: 100%;
+}
+
+.delete-button {
+    position: absolute;
+    top: 17%;
+    left: 96%;
+    font-size: 1em;
+    font-weight: 800;
+    color: #1e0045;
+    background: linear-gradient(225deg, rgba(221,57,255,0.19511554621848737) 0%, rgba(30,0,69,0.19791666666666663) 100%);
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.adding-input {
+    text-align: center;
+    border: 1px solid linear-gradient(18deg, rgba(213,213,213,1) 0%, rgba(172,172,172,1) 100%);
+    width: 200px;
+    height: 35px;
+}
+
+.add-button {
+    cursor: pointer;
+    background: linear-gradient(18deg, rgba(213,213,213,1) 0%, rgba(172,172,172,1) 100%);
+    color: #2b2b2b;
+    border: none;
+    margin: 10px;
+    padding: 8px 17px;
+    font-weight: 700;
+    border-radius: 7px;
+    box-shadow: 3px 3px 15px #6f6f6f;
+}
+
+.add-button:hover {
+    transition: linear 0.2s;
+    box-shadow: 3px 3px 25px #535353;
+    background: linear-gradient(18deg, rgba(172,172,172,1) 0%, rgba(213,213,213,1) 100%);
+    padding: 10px 20px;
+}

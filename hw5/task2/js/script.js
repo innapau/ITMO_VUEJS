@@ -10,7 +10,7 @@ Vue.component('carousel', {
     props: ['slides'],
     data: function() {
         return {
-            activeSlider: 0
+            activeSlide: 0
         }
     },
     template: `<div>
@@ -22,7 +22,7 @@ Vue.component('carousel', {
                     <carousel-item v-for="(slide, index) in slides"
                                 :slide="slides[index]"
                                 :key="slide.id"
-                                v-show="activeSlider == slide.id"
+                                v-show="activeSlide == slide.id"
                                 class="slide">
                     </carousel-item>
                 </div>
@@ -31,22 +31,25 @@ Vue.component('carousel', {
         runCarousel: function() {
             let that = this;
             setInterval(function() {
-                if (that.activeSlider == that.slides.length - 1) {
-                    that.activeSlider = 0;
+                if (that.activeSlide == that.slides.length - 1) {
+                    return that.activeSlide = 0;
                 }
-                that.activeSlider++;
+                that.activeSlide++;
             }, 5000)
         },
         nextSlide: function() {
             let that = this;
-            if (that.activeSlider == that.slides.length - 1) {
-                that.activeSlider = 0;
+            if (that.activeSlide == that.slides.length - 1) {
+                that.activeSlide = 0;
             }
-            that.activeSlider++;
+            that.activeSlide++;
         },
         prevSlide: function() {
             let that = this;
-            that.activeSlider--;
+            if (that.activeSlide > 0) {
+                that.activeSlide--;
+            }
+            return;
         }
     },
     created() {

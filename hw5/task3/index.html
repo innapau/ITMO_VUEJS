@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>VUE.js - Homework #5</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h2>{{sitename}}</h2>
+            <gallery :gallery="pictures" class="gallery" @passid="deletePicture" @add="addPicture">
+
+            </gallery>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>

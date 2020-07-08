@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>VUE.js - Homework #5</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/vue-router@3.3.4/dist/vue-router.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div class="tabs-container">
+                <ul class="tabs">
+                    <li v-for="tab in tabTitles">
+                        <router-link :to="{path: tab.shortcut}" exact active-class="active">{{tab.name}}</router-link>
+                    </li>
+                </ul>
+                <router-view class="tabs-content"></router-view>
+            </div>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
